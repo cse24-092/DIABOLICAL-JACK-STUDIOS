@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery - Diabolical Jack</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Gallery</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="Cart.html">Cart</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="gallery-section">
+    <h2 class="gallery-title">Explore Our Style</h2>
+    <div class="gallery">
+        <img src="images/DIABOLICAL JACK 2 JPG .jpg" alt="Promo Image 1">
+      <img src="images/DIABOLICAL JACK !.jpg" alt="Promo Image 2">
+      <img src="images/T shirt design1.jpg" alt="Promo Image 3">
+      <img src="images/ALL LIT 2 WHITE.jpg" alt="Promo Image 4">
+      <img src="images/Completed Miami.jpg" alt="Promo Image 5">
+    </div>
+  </section>
+
+  <!-- Lightbox Container -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>s
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Diabolical Jack. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const galleryImages = document.querySelectorAll(".gallery img");
+    const closeBtn = document.querySelector(".lightbox .close");
+
+    galleryImages.forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "block";
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
