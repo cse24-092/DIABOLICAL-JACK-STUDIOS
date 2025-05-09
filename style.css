@@ -1,4 +1,4 @@
-/* Reset & Base Styles */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
   line-height: 1.6;
 }
 
-/* Header Section */
+/* HEADER */
 header {
   background: #000;
   padding: 1em;
@@ -24,7 +24,7 @@ header h1 {
   margin-bottom: 0.5em;
 }
 
-/* Navigation */
+/* NAVIGATION */
 nav ul {
   list-style: none;
   display: flex;
@@ -49,54 +49,42 @@ nav ul li a.active {
   color: #e91e63;
 }
 
-/* Hero Section */
-.hero,
+/* HERO SECTION */
 .hero-banner {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  justify-content: center;
   background: linear-gradient(135deg, #000 50%, #1a1a1a 100%);
-  background-size: cover;
-  padding: 2em;
   text-align: center;
+  padding: 6em 2em;
 }
 
-.hero h2,
 .hero-content h2 {
   font-size: 3rem;
   color: #fff;
-  margin-bottom: 1rem;
 }
 
-.hero p,
 .hero-content p {
-  font-size: 1.2rem;
-  max-width: 600px;
   margin: 1em 0;
-  color: #ddd;
+  font-size: 1.2rem;
 }
 
-.hero button,
 .btn-main {
+  display: inline-block;
   padding: 0.8em 1.5em;
   background: #e91e63;
-  border: none;
   color: #fff;
-  font-size: 1rem;
-  font-weight: bold;
   text-decoration: none;
+  font-weight: bold;
   border-radius: 5px;
   transition: background 0.3s;
 }
 
-.hero button:hover,
 .btn-main:hover {
   background: #c2185b;
 }
 
-/* Features Section */
+/* FEATURES */
 .features {
   display: flex;
   flex-wrap: wrap;
@@ -115,7 +103,7 @@ nav ul li a.active {
   text-align: center;
 }
 
-/* CTA Section */
+/* CTA */
 .cta-section {
   background: #000;
   text-align: center;
@@ -138,9 +126,9 @@ nav ul li a.active {
   background: transparent;
   border: 2px solid #e91e63;
   color: #fff;
+  text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
-  text-decoration: none;
   transition: 0.3s;
 }
 
@@ -149,7 +137,7 @@ nav ul li a.active {
   color: #000;
 }
 
-/* Main Content Pages */
+/* MAIN CONTENT */
 .main-content {
   padding: 3em 2em;
   max-width: 1000px;
@@ -166,7 +154,7 @@ nav ul li a.active {
   color: #ccc;
 }
 
-/* Product Grid Section */
+/* PRODUCT GRID */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -208,7 +196,7 @@ nav ul li a.active {
   background: #c2185b;
 }
 
-/* Gallery Section */
+/* GALLERY */
 .gallery-section {
   padding: 3em 0;
   text-align: center;
@@ -242,7 +230,7 @@ nav ul li a.active {
   filter: brightness(1.2);
 }
 
-/* Lightbox */
+/* LIGHTBOX */
 .lightbox {
   display: none;
   position: fixed;
@@ -279,7 +267,7 @@ nav ul li a.active {
   color: #e91e63;
 }
 
-/* Contact Form */
+/* FORM */
 form {
   max-width: 600px;
   margin: 2em auto;
@@ -318,7 +306,7 @@ form button:hover {
   background: #c2185b;
 }
 
-/* About Section */
+/* ABOUT SECTION */
 .about-section {
   padding: 3em 2em;
   max-width: 1000px;
@@ -362,35 +350,23 @@ form button:hover {
   background-color: #222;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   background: #000;
   text-align: center;
   padding: 1em;
   margin-top: 2em;
-  font-size: 0.9rem;
 }
 
-/* Button Global */
+/* GLOBAL BUTTON */
 button {
   cursor: pointer;
 }
 
-/* Responsive Fixes */
+/* RESPONSIVE FIXES */
 @media (max-width: 768px) {
-  .hero h2,
   .hero-content h2 {
-    font-size: 2.2rem;
-  }
-
-  .hero p,
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .hero,
-  .hero-banner {
-    padding: 2em 1em;
+    font-size: 2rem;
   }
 
   .features {
@@ -402,34 +378,35 @@ button {
     max-width: 90%;
   }
 
-  .about-section {
-    padding: 2em 1em;
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-banner {
+    padding: 3em 1em;
   }
 
   nav ul {
     flex-direction: column;
     align-items: center;
-    gap: 1em;
   }
 
   nav ul li {
-    margin: 0.5em 0;
+    margin: 10px 0;
   }
 }
-
-@media (max-width: 480px) {
-  .hero h2,
-  .hero-content h2 {
-    font-size: 1.6rem;
-  }
-
-  .hero p,
-  .hero-content p {
-    font-size: 0.9rem;
-  }
-
-  .hero {
-    padding: 2em 1em;
-  }
-}
-
