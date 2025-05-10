@@ -410,3 +410,35 @@ button {
     margin: 10px 0;
   }
 }
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5em;
+}
+
+/* Toggle menu for small screens */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    text-align: right;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    background: #000;
+  }
+
+  nav ul.show-menu {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 1em 0;
+  }
+}
+
