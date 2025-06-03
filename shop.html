@@ -42,21 +42,25 @@
     <p>&copy; 2025 Diabolical Jack. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- JavaScript must be at the bottom -->
   <script>
-    const buttons = document.querySelectorAll(".add-to-cart");
+    document.addEventListener("DOMContentLoaded", function () {
+      console.log("Script loaded");
 
-    buttons.forEach(button => {
-      button.addEventListener("click", () => {
-        const name = button.getAttribute("data-name");
-        const price = parseFloat(button.getAttribute("data-price"));
-        const item = { name, price };
+      const buttons = document.querySelectorAll(".add-to-cart");
 
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cart.push(item);
-        localStorage.setItem("cart", JSON.stringify(cart));
+      buttons.forEach(button => {
+        button.addEventListener("click", () => {
+          const name = button.getAttribute("data-name");
+          const price = parseFloat(button.getAttribute("data-price"));
+          const item = { name, price };
 
-        alert(`${name} added to cart!`);
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+          cart.push(item);
+          localStorage.setItem("cart", JSON.stringify(cart));
+
+          alert(`${name} added to cart!`);
+        });
       });
     });
   </script>
