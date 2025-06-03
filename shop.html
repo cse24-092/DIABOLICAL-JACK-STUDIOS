@@ -28,19 +28,38 @@
       <img src="images/ALL LIT 3 BLACK.jpg" alt="Graphic T-Shirt">
       <h3>Graphic T-Shirt</h3>
       <p>P250.00</p>
-      <button>Add to Cart</button>
+      <button class="add-to-cart" data-name="Graphic T-Shirt" data-price="250">Add to Cart</button>
     </div>
     <div class="product">
       <img src="images/ALL LIT 1 HOODIE FRONT.jpg" alt="Black Hoodie">
       <h3>Black Hoodie</h3>
       <p>P450.00</p>
-      <button>Add to Cart</button>
-    
+      <button class="add-to-cart" data-name="Black Hoodie" data-price="450">Add to Cart</button>
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Diabolical Jack. All rights reserved.</p>
   </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const buttons = document.querySelectorAll(".add-to-cart");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const name = button.getAttribute("data-name");
+        const price = parseFloat(button.getAttribute("data-price"));
+        const item = { name, price };
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push(item);
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert(`${name} added to cart!`);
+      });
+    });
+  </script>
 
 </body>
 </html>
