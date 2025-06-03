@@ -35,7 +35,7 @@
       <h3>Black Hoodie</h3>
       <p>P450.00</p>
       <button>Add to Cart</button>
-    </div>
+    
   </main>
 
   <footer>
@@ -44,23 +44,3 @@
 
 </body>
 </html>
-<script>
-  const cart = [];
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll('.product button');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const product = button.closest('.product');
-        const name = product.querySelector('h3')?.textContent || "Unnamed Product";
-        const price = product.querySelector('p')?.textContent || "No Price Listed";
-
-        cart.push({ name, price });
-
-        alert(`${name} added to cart!`);
-        console.log("Cart contents:", cart);
-      });
-    });
-  });
-</script>
